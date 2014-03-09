@@ -1,0 +1,23 @@
+{
+  "name": "marc",
+  "version": "0.0.0",
+  "description": "A better markdown parser and compiler",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bredele/marc.git"
+  },
+  "keywords": [
+    "markdown",
+    "parser",
+    "compiler"
+  ],
+  "author": "Olivier Wietrich <olivier.wietrich@gmail.com> (http://github.com/bredele)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bredele/marc/issues"
+  }
+}
