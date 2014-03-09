@@ -19,5 +19,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bredele/marc/issues"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.1"
   }
 }
