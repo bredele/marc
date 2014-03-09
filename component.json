@@ -4,7 +4,9 @@
   "description": "A better markdown parser and compiler",
   "version": "0.0.1",
   "keywords": [],
-  "dependencies": {},
+  "dependencies": {
+    "bredele/store": "*"
+  },
   "development": {},
   "license": "MIT",
   "main": "index.js",

@@ -4,7 +4,7 @@
   "description": "A better markdown parser and compiler",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,7 @@
   },
   "devDependencies": {
     "mocha": "~1.17.1"
+  },
+  "dependencies": {
   }
 }
