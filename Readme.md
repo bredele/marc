@@ -26,7 +26,7 @@ var marc = require('marc')(data);
 
 ### Basic
 
-  `marc` uses [marked](https://github.com/chjj/marked) to render markdown into html.
+  `marc` generates html from markdown.
 
 ```js
 marc('I am using __markdown__.');
