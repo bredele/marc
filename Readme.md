@@ -93,7 +93,7 @@ marc('There is __{{items.length}}__ item{{ items.length !== 1 ? 's' : '' }}.', t
 //single options
 marc.config('sanitize', true);
 
-multiple options
+//multiple options
 marc.config({
   gfm:true,
   smartypants:true
