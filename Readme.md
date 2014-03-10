@@ -4,14 +4,19 @@
   > Markdown as a dynamic template engine
 
 
+Markdown is a text-to-HTML conversion tool for web writers. With a plain easy-to-write text you can create a website, a blog, a todo list, a slideshow or even a project presentation (like I've done here on github). However it is mostly used to generate static content.
+
+`marc` makes markdown a dynamic conversion engine with integrated *templates* that *updates automatically* when the underlying data changes. It also allows you to create *filters* or *partials* and makes easy to create content dynamically from a database.
+
 ## Installation
 
-
-  Install with [component](http://component.io):
+`marc` works on both client and server side:
+  
+  with [component](http://component.io):
 
     $ component install bredele/marc
 
-  Install with [nodejs](http://nodejs.org):
+  with [nodejs](http://nodejs.org):
 
     $ npm install marc
 
@@ -121,6 +126,107 @@ marc.config('sanitize');
 ```
 
 
+## API
+
+### General
+
+#### marc(str, fn)
+
+  Generate HTML from markdown.
+
+```js
+marc('I am using __markdown__.');
+marc('hello __{{ label }}__', true);
+marc('hello __{{ label }}__', function(val) {
+  //do something on change
+});
+```
+
+  Second argument is optional (substitute template variables if truethy).
+
+
+#### marc.filter(str, fn)
+
+  Add template filter. 
+
+```js
+marc.filter('hello', function(str) {
+  return 'hello ' + str + '!';
+});
+marc('hello __{{ label } | hello}__', true);
+
+```
+
+  Second argument is a function and takes the template variable as argument.
+
+#### marc.partial(name, str)
+
+  Add partial. 
+
+```js
+marc.partial('hello','__{{ name }}__');
+marc('hello {> hello }', true);
+```
+
+#### marc.config(name, val)
+
+  Set markdown options.
+
+```js
+marc.config('sanitize','true');
+marc.config({
+  sanitize: false,
+  gfm: true
+});
+```
+
+  or get options:
+
+
+```js
+marc.config('sanitize');
+```
+
+### Store
+
+  `marc` is basically a mixin of [store](http://github.com/bredele/store) and exposes its entire api through the option `marc.data`. Here's an example of computed property:
+
+```js
+marc.data.compute('name',function() {
+  return this.firstName + ' ' + this.lastName;
+});
+```
+
+  However, `marc` overrides some of the most used store handler such as `get` and `set` just for the beauty of code.
+
+#### .set(name, data)
+
+ Set an attribute `name` with data object.
+
+object store:
+```js
+marc.set('nickname','bredele');
+```
+
+ Or update data:
+
+```js
+marc.set({
+  nickname: 'olivier',
+  lastname: 'wietrich'
+});
+```
+
+#### .get(name)
+
+ Get an attribute `name`.
+
+```js
+marc.get('nickname');
+```
+
+
+### .compute(name, fn)
 
 ## License
 
