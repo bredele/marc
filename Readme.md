@@ -90,7 +90,7 @@ marc('There is __{{items.length}}__ item{{ items.length !== 1 ? 's' : '' }}.', t
 
   The MIT License (MIT)
 
-  Copyright (c) 2014 <olivier.wietrich@gmail.com> Olivier Wietrich
+  Copyright (c) 2014 <Olivier Wietrich>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
