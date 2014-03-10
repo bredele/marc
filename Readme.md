@@ -85,6 +85,28 @@ marc('There is __{{items.length}}__ item{{ items.length !== 1 ? 's' : '' }}.', t
 
   ...directly from your markdown. -->
 
+### Config
+
+  `marc` use [marked](https://github.com/chjj/marked) and allows to set markdown options as following:
+
+```js
+//single options
+marc.config('sanitize', true);
+
+multiple options
+marc.config({
+  gfm:true,
+  smartypants:true
+})
+```
+
+  or get options:
+
+```js
+marc.config('sanitize');
+```
+
+
 
 ## License
 
