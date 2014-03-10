@@ -5,7 +5,9 @@
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {
-    "bredele/store": "*"
+    "bredele/store": "*",
+    "chjj/marked": "*",
+    "bredele/store-supplant": "*"
   },
   "development": {},
   "license": "MIT",

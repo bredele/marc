@@ -24,5 +24,8 @@
     "mocha": "~1.17.1"
   },
   "dependencies": {
+    "store-component": "~0.1.4",
+    "marked": "~0.3.1",
+    "store-supplant": "0.0.2"
   }
 }
