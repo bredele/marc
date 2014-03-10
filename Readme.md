@@ -73,7 +73,7 @@ marc('__{{ name } | hello}__.', true);
 
   > filters can be chained and reused multiple times.
 
-### Expressions
+<!-- ### Expressions
 
   You can use grouping, binary operators, identifiers, comparators and ternary operators...
 
@@ -83,7 +83,7 @@ marc('There is __{{items.length}}__ item{{ items.length !== 1 ? 's' : '' }}.', t
 //<p>There is <strong>2</strong> items.</p>
 ```
 
-  ...directly from your markdown.
+  ...directly from your markdown. -->
 
 
 ## License
