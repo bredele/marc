@@ -1,8 +1,12 @@
-var Store = require('store-component'),
-		supplant = require('store-supplant'),
+var supplant = require('store-supplant'),
 		marked = require('marked'),
 		trim = require('trim');
-
+		
+try {
+	var Store = require('store');
+} catch(_) {
+	var Store = require('store-component');
+}
 
 /**
  * Expose 'marc'

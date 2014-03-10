@@ -7,9 +7,12 @@
   "dependencies": {
     "bredele/store": "*",
     "chjj/marked": "*",
+    "component/trim" : "*",
     "bredele/store-supplant": "*"
   },
-  "development": {},
+  "development": {
+    "component/assert" : "*"
+  },
   "license": "MIT",
   "main": "index.js",
   "scripts": [

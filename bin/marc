@@ -1,0 +1,44 @@
+#!/usr/bin/env node
+
+var program = require('commander'),
+		path = require('path'),
+		resolve = path.resolve,
+		read = require('read-file-stdin'),
+		write = require('write-file-stdout'),
+		marc = require('..')();
+
+/**
+ * Usage.
+ */
+
+program
+  .version(require('../package.json').version)
+  .usage('[<input>] [<output>]');
+
+
+/**
+ * Examples.
+ */
+
+program.on('--help', function () {
+  console.log('  Examples:');
+  console.log();
+  console.log('    # pass an input and output file:');
+  console.log('    $ marc input.md output.html');
+  console.log();
+});
+
+
+/**
+ * Parse.
+ */
+
+program.parse(process.argv);
+
+var input = program.args[0] ? resolve(program.args[0]) : null;
+var output = program.args[1] ? resolve(program.args[1]) : null;
+
+read(input, function (err, buffer) {
+	if (err) throw(err);
+	write(output, marc(buffer.toString()));
+});
