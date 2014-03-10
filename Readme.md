@@ -59,6 +59,20 @@ marc.set('label', 'github');
 
 ## Features
 
+### Partials
+
+  `marc` allows you to use partials (`{> name }`)
+
+
+```js
+marc.partial('hello', '__{{ label }}__!');
+marc('This is a partial: {> hello }.', function(val){
+  //<p>This is a partial: <strong>hello world</strong>!</p>
+});
+
+marc.set('label', 'hello world');
+```
+
 ### Filters
 
   `marc` allows you to apply filter(s) to your markdown in a unix-like fashion.
