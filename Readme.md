@@ -1,15 +1,61 @@
 
 # marc
 
-  A better markdown parser and compiler
+  > Markdown as a dynamic template engine
+
 
 ## Installation
 
-  Install with [component(1)](http://component.io):
+
+  Install with [component](http://component.io):
 
     $ component install bredele/marc
 
-## API
+  Install with [nodejs](http://nodejs.org):
+
+    $ npm install marc
+
+
+## Usage
+
+  `marc` can be initialized with an optional data.
+
+```js
+var marc = require('marc')(data);
+```
+
+### Basic
+
+  `marc` uses [marked](https://github.com/chjj/marked) to render markdown into html.
+
+```js
+marc('I am using __markdown__.');
+//<p>I am using <strong>markdown</strong>.</p>
+```
+
+### Templating
+
+  `marc` is also a template engine! It makes markdown less static and allows you to render html with data.
+
+```js
+marc.set('label', 'marc!');
+marc('I am using __{{label}}__.');
+//<p>I am using <strong>marc!</strong>.</p>
+```
+
+### Dynamic
+
+  `marc` makes your markdown dynamic! It updates automatically when the underlying data changes.
+
+```js
+marc('I am using __{{label}}__.', function(val) {
+  //<p>I am using <strong>marc!</strong>.</p>
+  //<p>I am using <strong>github</strong>.</p>  
+});
+
+marc.set('label, 'marc!');
+marc.set('label', 'github');
+```
 
 
 
@@ -17,7 +63,7 @@
 
   The MIT License (MIT)
 
-  Copyright (c) 2014 <copyright holders>
+  Copyright (c) 2014 <Olivier Wietrich> olivier.wietrich@gmail.com
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
