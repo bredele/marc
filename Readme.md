@@ -21,6 +21,22 @@ Markdown is a text-to-HTML conversion tool for web writers. With a plain easy-to
     $ npm install marc
 
 
+### Command line
+
+Install globally:
+
+    $ npm install -g marc
+
+```
+Usage: marc [<input>] [<output>]
+
+Examples:
+
+  # pass an input and output file:
+  $ myth input.md output.html
+  
+```
+
 ## Usage
 
   `marc` can be initialized with an optional data.
