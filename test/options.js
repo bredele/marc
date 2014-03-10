@@ -13,12 +13,19 @@ describe("Options", function() {
 		assert.equal(typeof marc.config, 'function');
 	});
 
-	it("should set option", function() {
 
+	it("should set and get option", function() {
+		marc.config('sanitize', true);
+		assert.equal(marc.config('sanitize'), true);
 	});
 
-	describe("set options", function() {
-
+	it('should set multiple options', function() {
+		marc.config({
+			sanitize: true,
+			escaped:false
+		});
+		assert.equal(marc.config('sanitize'), true);
+		assert.equal(marc.config('escaped'), false);
 	});
 
 });

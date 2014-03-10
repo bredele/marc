@@ -39,8 +39,19 @@ module.exports = function(data) {
 		return this;
 	};
 
-	marc.config = function() {
-
+	marc.config = function(name, val) {
+		if(typeof name === 'string') {
+			if(val) {
+				var obj = {};
+				obj[name] = val;
+				marked.setOptions(obj);
+			} else {
+				return marked.defaults[name];
+			}
+		} else {
+			marked.setOptions(name);
+		}
+		return this;
 	};
 
 	return marc;
