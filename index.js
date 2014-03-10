@@ -39,6 +39,10 @@ module.exports = function(data) {
 		return this;
 	};
 
+	marc.config = function() {
+
+	};
+
 	return marc;
 
 };
