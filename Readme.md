@@ -1,4 +1,3 @@
-
 # marc
 
   > Markdown as a dynamic template engine
@@ -6,7 +5,7 @@
 
 Markdown is a text-to-HTML conversion tool for web writers. With a plain easy-to-write text you can create a website, a blog, a todo list, a slideshow or even a project presentation (like I've done here on github). However it is mostly used to generate static content.
 
-`marc` makes markdown a dynamic conversion engine with integrated *templates* that *updates automatically* when the underlying data changes. It also allows you to create *filters* or *partials* and makes easy to create content dynamically from a database.
+`marc` makes markdown a dynamic conversion engine with integrated **templates** that **updates automatically** when the underlying data changes. It also allows you to create **filters** or **partials** and makes easy to create content dynamically from a database.
 
 ## Installation
 
