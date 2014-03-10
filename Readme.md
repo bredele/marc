@@ -53,7 +53,7 @@ marc('I am using __{{label}}__.', function(val) {
   //<p>I am using <strong>github</strong>.</p>  
 });
 
-marc.set('label, 'marc!');
+marc.set('label', 'marc!');
 marc.set('label', 'github');
 ```
 
