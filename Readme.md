@@ -79,7 +79,7 @@ marc('__{{ name } | hello}__.', true);
 
 ```js
 marc.set('items', ['item1', 'item2']);
-marc('There is __{{items.length}}__ item{{ items.length !== 1 ? 's' : '' }}__.', true);
+marc('There is __{{items.length}}__ item{{ items.length !== 1 ? 's' : '' }}.', true);
 //<p>There is <strong>2</strong> items.</p>
 ```
 

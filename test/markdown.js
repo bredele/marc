@@ -56,6 +56,7 @@ describe("Markdown", function() {
 			});
 			var result = marc('I am using __{{label} | upper}__.', true);
 			assert.equal(result,'<p>I am using <strong>MARKDOWN</strong>.</p>\n');
+			console.log(marc('__{{>partial}}__.'));
 		});
 
 	});
