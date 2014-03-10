@@ -11,7 +11,9 @@ describe("Markdown", function() {
 		});
 
 		it('should render html', function() {
+			console.time('basic');
 			var result = marc('I am using __markdown__.');
+			console.timeEnd('basic');
 			assert.equal(result,'<p>I am using <strong>markdown</strong>.</p>\n');
 		});
 
@@ -26,7 +28,9 @@ describe("Markdown", function() {
 		});
 
 		it('should render html with data', function() {
+			console.time('dynamic');
 			var result = marc('I am using __{{label}}__.', true);
+			console.timeEnd('dynamic');
 			assert.equal(result,'<p>I am using <strong>markdown</strong>.</p>\n');
 		});
 

@@ -35,7 +35,7 @@ marc('I am using __markdown__.');
 
 ### Templating
 
-  `marc` is also a template engine! It makes markdown less static and allows you to render html from any data.
+  `marc` is also a template engine! It makes markdown less static and allows you to substitute variables (double brackets `{{}}` with any data.
 
 ```js
 marc.set('label', 'marc!');
