@@ -26,6 +26,7 @@
   "dependencies": {
     "store-component": "~0.1.4",
     "marked": "~0.3.1",
-    "store-supplant": "0.0.2"
+    "store-supplant": "0.0.2",
+    "trim": "0.0.1"
   }
 }

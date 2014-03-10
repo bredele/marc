@@ -1,6 +1,7 @@
 var Store = require('store-component'),
 		supplant = require('store-supplant'),
-		marked = require('marked');
+		marked = require('marked'),
+		trim = require('trim');
 
 
 /**
@@ -12,6 +13,20 @@ module.exports = function(data) {
   var store = new Store(data);
   store.use(supplant);
 
+  var partials = {};
+
+	function partial(str, fn) {
+		return str.replace(/\{&gt;([^}]+)\}/g, function(_, expr) {
+			var name = trim(expr),
+			val = partials[name];
+			if(val){
+				val = marc(val);
+				if(val.substring(0, 3) === '<p>') val = val.substring(3, val.length - 5);
+				return val;
+			}
+		});
+	}
+
 	/**
 	 * marc constructor.
 	 * @api public
@@ -20,7 +35,7 @@ module.exports = function(data) {
 	function marc(str, fn) {
 		var result = marked(str);
 		if(fn) {
-			result = store.supplant(result, fn);
+			result = store.supplant(partial(result), typeof fn === 'function' ? fn : false);
 		}
 		return result;
 	}
@@ -52,6 +67,10 @@ module.exports = function(data) {
 			marked.setOptions(name);
 		}
 		return this;
+	};
+
+	marc.partial = function(name, str) {
+		partials[name] = str;
 	};
 
 	return marc;
