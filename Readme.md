@@ -39,7 +39,7 @@ marc('I am using __markdown__.');
 
 ```js
 marc.set('label', 'marc!');
-marc('I am using __{{label}}__.');
+marc('I am using __{{label}}__.', true);
 //<p>I am using <strong>marc!</strong>.</p>
 ```
 
@@ -48,7 +48,7 @@ marc('I am using __{{label}}__.');
   `marc` makes your markdown dynamic! It updates automatically when the underlying data changes.
 
 ```js
-marc('I am using __{{label}}__.', function(val) {
+marc('I am using __{{ label }}__.', function(val) {
   //<p>I am using <strong>marc!</strong>.</p>
   //<p>I am using <strong>github</strong>.</p>  
 });
@@ -57,6 +57,33 @@ marc.set('label', 'marc!');
 marc.set('label', 'github');
 ```
 
+## Features
+
+### Filters
+
+  `marc` allows you to apply filter(s) to your markdown in a unix-like fashion.
+
+```js
+marc.filter('hello', function(str) {
+  return 'hello ' + str + '!';
+});
+marc('__{{ name } | hello}__.', true);
+//<p><strong>hello world!</strong>.</p>
+```
+
+  > filters can be chained and reused multiple times.
+
+### Expressions
+
+  You can use grouping, binary operators, identifiers, comparators and ternary operators...
+
+```js
+marc.set('items', ['item1', 'item2']);
+marc('There is __{{items.length}}__ item{{ items.length !== 1 ? 's' : '' }}__.', true);
+//<p>There is <strong>2</strong> items.</p>
+```
+
+  ...directly from your markdown.
 
 
 ## License
