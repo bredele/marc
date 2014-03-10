@@ -27,10 +27,16 @@ module.exports = function(data) {
 
 	marc.set = function(name, val) {
 		store.set(name, val);
+		return this;
 	};
 
 	marc.get = function(name) {
 		return store.get(name);
+	};
+
+	marc.filter = function(name, fn) {
+		store.filter(name, fn);
+		return this;
 	};
 
 	return marc;
