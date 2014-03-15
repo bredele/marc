@@ -60,8 +60,8 @@ marc('I am using __markdown__.');
 
 ```js
 marc.set('label', 'marc!');
-marc('I am using __{{label}}__.', true);
-//<p>I am using <strong>marc!</strong>.</p>
+marc('I am using __markdown__ with {{label}}.', true);
+//<p>I am using <strong>markdown</strong> with marc!.</p>
 ```
 
 ### Dynamic
@@ -69,9 +69,9 @@ marc('I am using __{{label}}__.', true);
   `marc` makes your markdown dynamic! It updates automatically when the underlying data changes.
 
 ```js
-marc('I am using __{{ label }}__.', function(val) {
-  //<p>I am using <strong>marc!</strong>.</p>
-  //<p>I am using <strong>github</strong>.</p>  
+marc('I am using __narkdown__ with {{label}}.', function(val) {
+  //<p>I am using <strong>markdown</strong> with marc!.</p>
+  //<p>I am using <strong>markdown</strong> with github.</p> 
 });
 
 marc.set('label', 'marc!');
@@ -102,8 +102,8 @@ marc.set('label', 'hello world');
 marc.filter('hello', function(str) {
   return 'hello ' + str + '!';
 });
-marc('__{{ name } | hello}__.', true);
-//<p><strong>hello world!</strong>.</p>
+marc('# {{ name } | hello}.', true);
+//<h1>hello world!.</h1>
 ```
 
   > filters can be chained and reused multiple times.
@@ -152,8 +152,8 @@ marc.config('sanitize');
 
 ```js
 marc('I am using __markdown__.');
-marc('hello __{{ label }}__', true);
-marc('hello __{{ label }}__', function(val) {
+marc('hello __markdown__ with {{label}}', true);
+marc('hello __markdown__ with {{label}}', function(val) {
   //do something on change
 });
 ```
@@ -169,7 +169,7 @@ marc('hello __{{ label }}__', function(val) {
 marc.filter('hello', function(str) {
   return 'hello ' + str + '!';
 });
-marc('hello __{{ label } | hello}__', true);
+marc('# {{ label } | hello}', true);
 
 ```
 
@@ -240,9 +240,6 @@ marc.set({
 ```js
 marc.get('nickname');
 ```
-
-
-### .compute(name, fn)
 
 ## License
 
