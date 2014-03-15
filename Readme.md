@@ -32,7 +32,7 @@ Usage: marc [<input>] [<output>]
 Examples:
 
   # pass an input and output file:
-  $ myth input.md output.html
+  $ marc input.md output.html
   
 ```
 
