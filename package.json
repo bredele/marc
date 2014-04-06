@@ -1,6 +1,6 @@
 {
   "name": "marc",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A better markdown parser and compiler",
   "main": "index.js",
   "scripts": {
@@ -27,12 +27,12 @@
     "mocha": "~1.17.1"
   },
   "dependencies": {
-    "store-component": "~0.1.4",
+    "commander": "~2.1.0",
+    "datastore": "^1.0.0",
     "marked": "~0.3.1",
+    "read-file-stdin": "0.0.3",
     "store-supplant": "0.0.2",
     "trim": "0.0.1",
-    "commander": "~2.1.0",
-    "read-file-stdin": "0.0.3",
     "write-file-stdout": "0.0.2"
   }
 }

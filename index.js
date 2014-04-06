@@ -1,12 +1,8 @@
-var supplant = require('store-supplant'),
-		marked = require('marked'),
-		trim = require('trim');
+var supplant = require('store-supplant');
+var marked = require('marked');
+var trim = require('trim');
+var Store = require('datastore');
 		
-try {
-	var Store = require('store');
-} catch(_) {
-	var Store = require('store-component');
-}
 
 /**
  * Expose 'marc'
