@@ -202,9 +202,9 @@ marc.config({
 marc.config('sanitize');
 ```
 
-### Store
+### Datastore
 
-  `marc` is basically a mixin of [store](http://github.com/bredele/store) and exposes its entire api through the option `marc.data`. Here's an example of computed property:
+  `marc` is basically a mixin of [datastore](http://github.com/bredele/datastore) and exposes its entire api through the option `marc.data`. Here's an example of computed property:
 
 ```js
 marc.data.compute('name',function() {
