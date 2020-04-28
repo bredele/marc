@@ -68,7 +68,7 @@ marc('I am using __markdown__ with {{label}}.', true);
   `marc` makes your markdown dynamic! It updates automatically when the underlying data changes.
 
 ```js
-marc('I am using __narkdown__ with {{label}}.', function(val) {
+marc('I am using __markdown__ with {{label}}.', function(val) {
   //<p>I am using <strong>markdown</strong> with marc!.</p>
   //<p>I am using <strong>markdown</strong> with github.</p> 
 });
